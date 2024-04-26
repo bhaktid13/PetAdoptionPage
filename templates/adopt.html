@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adopt a Pet - PawsNest</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/iconlogo.png') }}">
+    <link rel="stylesheet" as="style" type="text/css" media="screen" href="{{ url_for('static', filename='css/style.css') }}">
+        <style>
+        /* Additional styles specific to this page */
+        body {
+            background-color: #000000; /* Set background color to black */
+            color: #ffffff; /* Set text color to white */
+            font-family: Arial, sans-serif; /* Choose a font */
+            line-height: 1.6; /* Set line height */
+        }
+        .large-input {
+            width: 466px; 
+            height: 32px;
+        }
+
+        .message {
+            color: white;
+        }
+        button[type="submit"] {
+            background-color: #f3be7a; /* Set button background color */
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header id="header">
+        <div class="container">
+            <div class="row" id="navbar"> 
+                <input type="checkbox" id="mobile-toggle"> 
+                <label class="hamburger" id="mobile-toggle-btn" for="mobile-toggle"> 
+                    <span></span> 
+                    <span></span> 
+                    <span></span> 
+                </label>
+                <div class="nav-brand">
+                    <img src="{{ url_for('static', filename='images/iconlogo.png') }}" alt="PawsNest Logo" class="logo" >
+                    <h1><a href="{{ url_for('index') }}" title="PawsNest">PawsNest</a></h1>
+                </div>
+                <nav class="nav_menu">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}" title="Home">Home</a></li>
+                        <li><a href="#about" title="About">About</a></li>
+                        <li><a href="#pets" title="Adopt">Adopt</a></li>
+                        <li><a href="{{ url_for('login') }}" title="Login/Signup">Login/Signup</a></li>
+                        <li><a href="#contact" title="Contact us">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section id="adopt" class="py-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="adopt_form col-lg-5">
+                    <form action="{{ url_for('adopt') }}" method="post">
+                        {% if message is defined and message %}
+                        <p class="message">{{ message }}</p>
+                            {% endif %}
+                            <h2>Adopt a Pet</h2>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="adoptee_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="text" id="age" name="adoptee_age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" name="adoptee_address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pno">Contact Number:</label>
+                            <input type="text" id="pno" name="adoptee_pno" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="adoptee_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pets_count">Number of Pets Owned:</label>
+                            <input type="number" id="pets_count" name="adoptee_pets_count" required class="large-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="pet_breed">Breed of Pets Owned:</label>
+                            <input type="text" id="pet_breed" name="adoptee_pet_breed" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pet_adopt">Which pet you wish to adopt?</label>
+                            <input type="text" id="pet_adopt" name="adoptee_pet_adopt" required>
+                        </div>
+                        <button type="submit">Adopt Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="py-50">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-xs-6">
+                    <h2>For questions<br>and suggestions</h2>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/envelope.svg') }}">email@pawsnest.com</li>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/telephone.svg') }}">+91 1234 567 890</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <h2>We are waiting<br>for your visit</h2>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/pin.svg') }}">Sector 1, Phase 1, Kamothe (MGMCET)
+                        </li>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/pin.svg') }}">Navi Mumbai, Maharashtra, India</li>
+                    </ul>
+                </div>
+            </div>
+        </div><br>
+        <p style="text-align: center;">&copy; 2024 PawsNest. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

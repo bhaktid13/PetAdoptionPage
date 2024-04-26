@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Registeration Form</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">              
+</head>
+<body>
+<div class="container">
+	<form action="{{ url_for('register') }}" method="post">
+        {% if mesage is defined and mesage %}
+			<div class="alert alert-warning">{{ mesage }}</div>
+		{% endif %}
+		<h2>User Registration</h2>
+		<div class="input-group">
+			<label for="name">Name:</label>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
+		</div>
+		<div class="input-group">
+			<label for="age">Age:</label>
+			<input type="text" class="form-control" id="age" name="age" placeholder="Enter age" name="age">
+		</div>
+		<div class="input-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+		</div>
+		<div class="input-group">
+			<label for="phone">Contact Number:</label>
+			<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter contact number" name="phone">
+		</div>
+		<div class="input-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+		</div>   
+		<div class="input-group">
+			<button type="submit">Sign Up</button>
+		</div> 
+		<p class="bottom">Already have an account?  <a href="{{url_for('login')}}"> Login here</a></p>
+	</form>
+</div>        
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Login Form</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>	
+
+<div class="container">
+	<div id="login-tab" class="tab-content active">
+	   <form action="{{ url_for('login') }}" method="post">
+		{% if mesage is defined and mesage %}
+		 <div class="alert alert-warning">{{ mesage }}</div>
+	    {% endif %}   
+
+	<h2>User Login</h2>
+
+		<div class="input-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+		</div>
+		<div class="input-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+		</div>    
+		<div class="input-group">
+			<button type="submit">Login</button>
+		</div>
+		<p>Don't have an account? <a href="{{url_for('register')}}" id="signup-link"> Register here</a></p>
+
+	   </form>
+	</div>
+</div>
+</body>
+</html>

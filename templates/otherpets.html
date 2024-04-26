@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PawsNest</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/iconlogo.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" as="style" type="text/css" media="screen" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row" id="navbar"> <input type="checkbox" id="mobile-toggle"> <label class="hamburger"
+                    id="mobile-toggle-btn" for="mobile-toggle"> <span></span> <span></span> <span></span> </label>
+                <div class="nav-brand">
+                    <h1><a href="{{ url_for('index')}}"> <title="PawsNest template">PawsNest</a></h1>
+                    <h5>Shelter for pets</h5>
+                </div>
+                <nav class="nav_menu">
+                    <ul>
+                        <li><a href="{{ url_for('index')}}" title="Home">Home</a></li>
+                        <li><a href="#pets" title="Our pets" class="active">Our pets</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="banner" class="flex">
+        <div class="container">
+            <div>
+                <h1>Not only humans need a house</h1>
+                <p>"Welcome to PawsNest, where wagging tails, joyful purrs, and fluttering feathers 
+                    unite in a symphony of love. Find your perfect companion, and let the journey of 
+                    endless cuddles and cherished memories begin. 
+                    Together, we create forever homes, one happy pet at a time."</p>
+            </div>
+        </div>
+    </div>
+</header>    
+<section class="py-100" id="pets">
+  <div class="container">
+      <h2>Find your perfect companion<br> from our adorable pets ready for adoption!</h2>
+      <div class="slider_wrapper">
+          <div class="pets_slider">
+              <div class="slide" id="Katrine">
+                  <figure> <img src="{{ url_for('static', filename='images/Katrine.png') }}" width="270" /> </figure>
+                  <p>Name: Katrine</p>
+                  <p>Species: Cat</p>
+                  <p>Age: 2 years</p>
+                  <p>Description: A graceful and curious feline, known for her playful antics and affectionate purrs.</p>
+                  <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+                </div>
+              <div class="slide" id="Jennifer">
+                  <figure> <img src="{{ url_for('static', filename='images/Jennifer.png') }}" width="270" /> </figure>
+                  <p>Name: Jennifer</p>
+                  <p>Species: Dog</p>
+                  <p>Age: 1 year</p>
+                  <p>Description: A lively and affectionate canine companion, bringing joy and playfulness to every moment.</p>
+                  <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+                </div>
+              <div class="slide" id="Mittens">
+                  <figure> <img src="{{ url_for('static', filename='images/mittens.jpg') }}" width="200" /> </figure>
+                  <p>Name: Mittens</p>
+                  <p>Species: Cat</p>
+                  <p>Age: 4 years</p>
+                  <p>Description: Mittens is a playful and energetic cat who enjoys exploring and climbing.</p>
+                  <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+                </div>
+          </div>
+          
+          <div class="slider_nav"> <a title="See Katrine" alt="a grey female cat standing" href="#Katrine"></a> <a
+                  title="See Jennifer" alt="a white female puppy with brown ears sitting" href="#Jennifer"></a> <a
+                  title="See Mitten" alt="a playful cat" href="#Mittens"></a>
+      </div>
+      <div class="slider_wrapper">
+        <div class="pets_slider">
+            <div class="slide" id="Daisy">
+                <figure> <img src="{{ url_for('static', filename='images/daisy.jpeg') }}" width="270" /> </figure>
+                <p>Name: Daisy</p>
+                <p>Species: Dog</p>
+                <p>Age: 2 years</p>
+                <p>Description: Daisy is a sweet and gentle dog who enjoys snuggling and spending time with her family.</p>
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+            <div class="slide" id="Whiskers">
+                <figure> <img src="{{ url_for('static', filename='images/whiskers.jpeg') }}" width="270" /> </figure>
+                <p>Name: Whiskers</p>
+                <p>Species: Cat</p>
+                <p>Age: 3 years</p>
+                <p>Description: Whiskers is a charming and affectionate cat who loves cuddles and chasing toys.</p> 
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+            <div class="slide" id="Luna">
+                <figure> <img src="{{ url_for('static', filename='images/luna.jpeg') }}" width="120" /> </figure>
+                <p>Name: Luna</p>
+                <p>Species: Cat</p>
+                <p>Age: 2 years</p>
+                <p>Description: Luna is a sweet and gentle cat who enjoys cuddles and napping in cozy spots.</p>
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+        </div>
+        
+        <div class="slider_nav"> <a title="dog" alt="a rabit standing" href="#Daisy"></a> <a
+                title="See Whiskerr" alt="catte" href="#Whiskers"></a> <a
+                title="See Luna" alt="a cat" href="#Luna"></a>
+    </div>
+    <div class="slider_wrapper">
+        <div class="pets_slider">
+            <div class="slide" id="Shadow">
+                <figure> <img src="{{ url_for('static', filename='images/shadow.jpeg') }}" width="270" /> </figure>
+                <p>Name: Shadow</p>
+                <p>Species: Cat</p>
+                <p>Age: 1 year</p>
+                <p>Description: Shadow is a playful and curious cat who enjoys chasing toys and lounging in the sun.</p>
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+            <div class="slide" id="Buddy">
+                <figure> <img src="{{ url_for('static', filename='images/buddy.jpeg') }}" width="270" /> </figure>
+                <p>Name: Buddy</p>
+                <p>Species: Dog</p>
+                <p>Age: 3 years</p>
+                <p>Description: Buddy is a friendly and loyal dog who enjoys playing fetch and going for long walks.</p>
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+            <div class="slide" id="Max">
+                <figure> <img src="{{ url_for('static', filename='images/max.jpeg') }}" width="270" /> </figure>
+                <p>Name: Max</p>
+                <p>Species: Dog</p>
+                <p>Age: 2 years</p>
+                <p>Description: Max is an energetic and playful dog who loves running and exploring new places.</p>
+                <p></p><a href="{{ url_for('adopt') }}">Adopt</a>
+            </div>
+        </div>
+        
+        <div class="slider_nav"> <a title="See Bronze" alt="an eagle" href="#Shadow"></a> <a
+                title="See Buddy" alt="a Turtle" href="#Buddy"></a> <a
+                title="See Max" alt="a snake" href="#Max"></a>
+    </div>
+  </div>
+</section>
+<section id="resources" class="py-50">
+<div class="container">
+  <h2 style="text-align: center;">Resources</h2>
+  <h3>How to Take Care of Your Pets</h3>
+  <p>1. Daily Routine:</p>
+  <ul>
+    <li>Provide fresh food and water daily.</li>
+    <li>Take your pet for regular walks or exercise sessions.</li>
+    <li>Set aside playtime for mental stimulation and bonding.</li>
+    <li>Ensure a comfortable and safe sleeping area.</li>
+    <li>Regular grooming and hygiene maintenance.</li>
+  </ul>
+  <p>2. Health Care:</p>
+  <ul>
+    <li>Schedule routine vet check-ups and vaccinations.</li>
+    <li>Administer flea, tick, and heartworm preventatives as recommended.</li>
+    <li>Monitor your pet's weight and diet to prevent obesity.</li>
+    <li>Be aware of any signs of illness or discomfort and seek veterinary care promptly.</li>
+    <li>Keep your pet's living environment clean and free from hazards.</li>
+  </ul>
+</div>
+</section>
+<footer id="footer" class="py-50">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-xs-6">
+                    <h2>For questions<br>and suggestions</h2>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/envelope.svg') }}">email@pawsnest.com</li>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/telephone.svg') }}">+91 1234 567 890</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <h2>We are waiting<br>for your visit</h2>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/pin.svg') }}">Sector 1, Phase 1, Kamothe (MGMCET)
+                        </li>
+                        <li><img src="{{ url_for('static', filename='images/SVG Icon/pin.svg') }}">Navi Mumbai, Maharashtra, India</li>
+                    </ul>
+                </div>
+            </div>
+        </div><br>
+        <p style="text-align: center;">&copy; 2024 PawsNest. All rights reserved.</p>
+    </footer>
+</body>
+</html>
